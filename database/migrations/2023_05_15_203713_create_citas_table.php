@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
             $table->time('hora');
+            $table->string('comentario',250);
             $table->unsignedBigInteger('cliente_id');
  
             $table->foreign('cliente_id')->references('id')->on('clientes');

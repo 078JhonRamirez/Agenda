@@ -13,10 +13,15 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->string ('nombre', 100);   
+            $table->string ('nombre', 100); 
+            $table->string('apellido',150); 
             $table->integer('telefono');
+            $table->string('ocupacion',150);
+            $table->string('correo',150);
+            $table->string('direccion');
+            // se agrega la fecha de entrada, cambiar tipo de dato
+            $table->string('fecha');
             $table->unsignedBigInteger('usuario_id');
- 
             $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
         });
