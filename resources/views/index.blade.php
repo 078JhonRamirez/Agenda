@@ -1,676 +1,534 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.layout')
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
-	<meta name="author" content="AdminKit">
-	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+@section('sesion')
+    <!-- preloader
+    ================================================== -->
+    {{-- <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <div id="top" class="s-wrap site-wrapper"> --}}
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
+        <!-- site header
+        ================================================== -->
+        <header class="s-header">
 
-	<title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+            <div class="header__top">
+                <div class="header__logo">
+                    <a class="site-logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
+                    </a>
+                </div>
+            </div> <!-- end header__top -->
 
-	<link href="css/app.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
 
-<body>
-	<div class="wrapper">
-		<nav id="sidebar" class="sidebar js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
-          <span class="align-middle">AgendaPro</span>
-        </a>
-
-				<ul class="sidebar-nav">
-					<li class="sidebar-header">
-						Funciones
-					</li>
-
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="index.html">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Notas</span>
+            <!-- menu toggle -->
+            <a href="#0" class="header__menu-toggle">
+                <span>Menu</span>
             </a>
-					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Perfil</span>
+        </header> <!-- end s-header -->
+
+
+        <!-- search
+        ================================================== -->
+        <div class="s-search">
+
+            <div class="search-block">
+    
+                <form role="search" method="get" class="search-form" action="#">
+                    <label>
+                        <span class="hide-content">Search for:</span>
+                        <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                    </label>
+                    <input type="submit" class="search-submit" value="Search">
+                </form>
+    
+                <a href="#0" title="Close Search" class="search-close">Close</a>
+    
+            </div>  <!-- end search-block -->
+
+            <!-- search modal trigger -->
+            <a href="#0" class="search-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"></path></svg>
+                <span>Search</span>
             </a>
-					</li>
+            <span class="search-line"></span>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-in.html">
-              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Salir</span>
-            </a>
-					</li>
-</li>
-		</nav>
+        </div> <!-- end s-search -->
 
-		<div class="main">
-			<nav class="navbar navbar-expand navbar-light navbar-bg">
-				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
 
-				<div class="navbar-collapse collapse">
-					<ul class="navbar-nav navbar-align">
-						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
-								<div class="position-relative">
-									<i class="align-middle" data-feather="bell"></i>
-									<span class="indicator">4</span>
-								</div>
-							</a>
-							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
-								<div class="dropdown-menu-header">
-									4 New Notifications
-								</div>
-								<div class="list-group">
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<i class="text-danger" data-feather="alert-circle"></i>
-											</div>
-											<div class="col-10">
-												<div class="text-dark">Update completed</div>
-												<div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
-												<div class="text-muted small mt-1">30m ago</div>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<i class="text-warning" data-feather="bell"></i>
-											</div>
-											<div class="col-10">
-												<div class="text-dark">Lorem ipsum</div>
-												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
-												<div class="text-muted small mt-1">2h ago</div>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<i class="text-primary" data-feather="home"></i>
-											</div>
-											<div class="col-10">
-												<div class="text-dark">Login from 192.186.1.8</div>
-												<div class="text-muted small mt-1">5h ago</div>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<i class="text-success" data-feather="user-plus"></i>
-											</div>
-											<div class="col-10">
-												<div class="text-dark">New connection</div>
-												<div class="text-muted small mt-1">Christina accepted your request.</div>
-												<div class="text-muted small mt-1">14h ago</div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="dropdown-menu-footer">
-									<a href="#" class="text-muted">Show all notifications</a>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
-								<div class="position-relative">
-									<i class="align-middle" data-feather="message-square"></i>
-								</div>
-							</a>
-							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
-								<div class="dropdown-menu-header">
-									<div class="position-relative">
-										4 New Messages
-									</div>
-								</div>
-								<div class="list-group">
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
-											</div>
-											<div class="col-10 ps-2">
-												<div class="text-dark">Vanessa Tucker</div>
-												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
-												<div class="text-muted small mt-1">15m ago</div>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
-											</div>
-											<div class="col-10 ps-2">
-												<div class="text-dark">William Harris</div>
-												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
-												<div class="text-muted small mt-1">2h ago</div>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason">
-											</div>
-											<div class="col-10 ps-2">
-												<div class="text-dark">Christina Mason</div>
-												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
-												<div class="text-muted small mt-1">4h ago</div>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row g-0 align-items-center">
-											<div class="col-2">
-												<img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
-											</div>
-											<div class="col-10 ps-2">
-												<div class="text-dark">Sharon Lessman</div>
-												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
-												<div class="text-muted small mt-1">5h ago</div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="dropdown-menu-footer">
-									<a href="#" class="text-muted">Show all messages</a>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
+        <!-- site content
+        ================================================== -->
+        <div class="s-content">
+            
+            <div class="masonry-wrap">
 
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-              </a>
-							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Log out</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
+                <div class="masonry">
+    
+                    <div class="grid-sizer"></div>
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+                            
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/woodcraft-600.jpg" 
+                                        srcset="images/thumbs/masonry/woodcraft-600.jpg 1x, images/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+        
+                        <div class="entry__text">
+                            <div class="entry__header">
+    
+                                <h2 class="entry__title"><a href="single-standard.html">Just a Standard Format Post.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Design</a> 
+                                        <a href="category.html">Photography</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 29, 2019</a>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+        
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-quote animate-this">
+                            
+                        <div class="entry__thumb">
+                            <blockquote>
+                                <p>Good design is making something intelligible and memorable. Great design is making something memorable and meaningful.</p>
+    
+                                <cite>Dieter Rams</cite>
+                            </blockquote>
+                        </div>   
+        
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+                            
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/tulips-600.jpg" 
+                                        srcset="images/thumbs/masonry/tulips-600.jpg 1x, images/thumbs/masonry/tulips-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+        
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-standard.html">10 Interesting Facts About Caffeine.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Health</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 28, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+        
+                    </article> <!-- end article -->
+                    
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+    
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/dew-600.jpg" 
+                                        srcset="images/thumbs/masonry/dew-600.jpg 1x, images/thumbs/masonry/dew-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+        
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-standard.html">Health Benefits Of Morning Dew.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Lifestyle</a>
+                                        <a href="category.html">Health</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 28, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+        
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+    
+                            <div class="entry__thumb">
+                                <a href="single-standard.html" class="entry__thumb-link">
+                                    <img src="images/thumbs/masonry/rucksack-600.jpg" 
+                                            srcset="images/thumbs/masonry/rucksack-600.jpg 1x, images/thumbs/masonry/rucksack-1200.jpg 2x" alt="">
+                                </a>
+                            </div>
+            
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    
+                                    <h2 class="entry__title"><a href="single-standard.html">The Art Of Visual Storytelling.</a></h2>
+                                    
+                                    <div class="entry__meta">
+                                        <span class="entry__meta-cat">
+                                            <a href="category.html">Lifestyle</a>
+                                            <a href="category.html">Work</a>
+                                        </span>
+                                        <span class="entry__meta-date">
+                                            <a href="single-standard.html">Apr 26, 2019</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                    </p>
+                                </div>
+                            </div>
+            
+                        </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+    
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/jump-600.jpg" 
+                                        srcset="images/thumbs/masonry/jump-600.jpg 1x, images/thumbs/masonry/jump-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+    
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                
+                                <h2 class="entry__title"><a href="single-standard.html">Create Meaningful Family Moments.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Family</a>
+                                        <a href="category.html">Relationship</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 26, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+    
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-audio animate-this">
+    
+                        <div class="entry__thumb">
+                            <a href="single-audio.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/guitarist-600.jpg" 
+                                     srcset="images/thumbs/masonry/guitarist-600.jpg 1x, images/thumbs/masonry/guitarist-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+    
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-audio.html">What Your Music Preference Says About You and Your Personality.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Lifestyle</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 24, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+    
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+    
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/beetle-600.jpg" 
+                                        srcset="images/thumbs/masonry/beetle-600.jpg 1x, images/thumbs/masonry/beetle-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+    
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-standard.html">Throwback To The Good Old Days.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Lifestyle</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 24, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+    
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-video animate-this">
+                            
+                        <div class="entry__thumb video-image">
+                            <a href="https://player.vimeo.com/video/117310401?color=339989&title=0&byline=0&portrait=0" data-lity class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/cookies-600.jpg" 
+                                     srcset="images/thumbs/masonry/cookies-600.jpg 1x, images/thumbs/masonry/cookies-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+        
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-video.html">No Sugar Oatmeal Cookies.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Lifestyle</a>
+                                        <a href="category.html">Health</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 24, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+        
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+    
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/lamp-600.jpg" 
+                                        srcset="images/thumbs/masonry/lamp-600.jpg 1x, images/thumbs/masonry/lamp-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+    
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-standard.html">Another Standard Format Post.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Design</a>
+                                        <a href="category.html">Photography</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 24, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+    
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-link animate-this">
+                        
+                        <div class="entry__thumb">
+                            <div class="link-wrap">
+                                <h2>Powerful web & Wordpress hosting. Guaranteed. Starting at $2.59/mo!</h2>
+                                <cite>
+                                    <a target="_blank" href="https://www.dreamhost.com/r.cgi?287326">https://www.dreamhost.com</a>
+                                </cite>
+                            </div>
+                        </div>
+                        
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-gallery animate-this">
+                            
+                        <div class="entry__thumb slider">
+                            <div class="slider__slides">
+                                <div class="slider__slide">
+                                    <img src="images/thumbs/masonry/gallery/slide-1-600.jpg" 
+                                         srcset="images/thumbs/masonry/gallery/slide-1-600.jpg 1x, images/thumbs/masonry/gallery/slide-1-1200.jpg 2x" alt=""> 
+                                </div>
+                                <div class="slider__slide">
+                                    <img src="images/thumbs/masonry/gallery/slide-2-600.jpg" 
+                                         srcset="images/thumbs/masonry/gallery/slide-2-600.jpg 1x, images/thumbs/masonry/gallery/slide-2-1200.jpg 2x" alt=""> 
+                                </div>
+                                <div class="slider__slide">
+                                    <img src="images/thumbs/masonry/gallery/slide-3-600.jpg" 
+                                         srcset="images/thumbs/masonry/gallery/slide-3-600.jpg 1x, images/thumbs/masonry/gallery/slide-3-1200.jpg 2x" alt="">  
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-gallery.html">The Best Tropical Leaves Images.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Vacation</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 23, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+        
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+    
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/walk-600.jpg" 
+                                        srcset="images/thumbs/masonry/walk-600.jpg 1x, images/thumbs/masonry/walk-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+    
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-standard.html">Using Repetition and Patterns in Photography.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Work</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 23, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+    
+                    </article> <!-- end article -->
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+    
+                        <div class="entry__thumb">
+                            <a href="single-standard.html" class="entry__thumb-link">
+                                <img src="images/thumbs/masonry/real-600.jpg" 
+                                        srcset="images/thumbs/masonry/real-600.jpg 1x, images/thumbs/masonry/real-1200.jpg 2x" alt="">
+                            </a>
+                        </div>
+    
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h2 class="entry__title"><a href="single-standard.html">How We Live Is What Makes Us Real.</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        <a href="category.html">Travel</a>
+                                        <a href="category.html">Vacation</a>
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        <a href="single-standard.html">Apr 23, 2019</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                                </p>
+                            </div>
+                        </div>
+    
+                    </article> <!-- end article -->
+    
+                </div> <!-- end masonry -->
 
-			<main class="content">
-				<div class="container-fluid p-0">
+            </div> <!-- end masonry-wrap -->
 
-					<h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
+            <div class="row">
+                <div class="column large-full">
+                    <nav class="pgn">
+                        <ul>
+                            <li><a class="pgn__prev" href="#0">Prev</a></li>
+                            <li><a class="pgn__num" href="#0">1</a></li>
+                            <li><span class="pgn__num current">2</span></li>
+                            <li><a class="pgn__num" href="#0">3</a></li>
+                            <li><a class="pgn__num" href="#0">4</a></li>
+                            <li><a class="pgn__num" href="#0">5</a></li>
+                            <li><span class="pgn__num dots">…</span></li>
+                            <li><a class="pgn__num" href="#0">8</a></li>
+                            <li><a class="pgn__next" href="#0">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
 
-					<div class="row">
-						<div class="col-xl-6 col-xxl-5 d-flex">
-							<div class="w-100">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Sales</h5>
-													</div>
+        </div> <!-- end s-content -->
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="truck"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">2.382</h1>
-												<div class="mb-0">
-													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Visitors</h5>
-													</div>
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="users"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">14.212</h1>
-												<div class="mb-0">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Earnings</h5>
-													</div>
+        <!-- footer
+        ================================================== -->
+        <footer class="s-footer">
+            <div class="row">
+                <div class="column large-full footer__content">
+                    <div class="footer__copyright">
+                        <span>© Copyright Typerite 2021</span> 
+                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                    </div>
+                </div>
+            </div>
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="dollar-sign"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">$21.300</h1>
-												<div class="mb-0">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Orders</h5>
-													</div>
+            <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"></a>
+            </div>
+        </footer>
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="shopping-cart"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">64</h1>
-												<div class="mb-0">
-													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+    </div> <!-- end s-wrap -->
 
-						
 
-					
-						
-						<div class="col-12 col-md-10 col-xxl-6 d-flex order-1 order-xxl-1">
-							<div class="card flex-fill">
-								<div class="card-header">
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
-									<h5 class="card-title mb-0">Calendar</h5>
-								</div>
-								<div class="card-body d-flex">
-									<div class="align-self-center w-100">
-										<div class="chart">
-											<div id="datetimepicker-dashboard"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 col-lg-12 col-xxl-12 d-flex">
-							<div class="card flex-fill">
-								<div class="card-header">
-
-									<h5 class="card-title mb-0">Latest Projects</h5>
-								</div>
-								<table class="table table-hover my-0">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th class="d-none d-xl-table-cell">Start Date</th>
-											<th class="d-none d-xl-table-cell">End Date</th>
-											<th>Status</th>
-											<th class="d-none d-md-table-cell">Assignee</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Project Apollo</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
-										</tr>
-										<tr>
-											<td>Project Fireball</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-danger">Cancelled</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-										<tr>
-											<td>Project Hades</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Sharon Lessman</td>
-										</tr>
-										<tr>
-											<td>Project Nitro</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-warning">In progress</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
-										</tr>
-										<tr>
-											<td>Project Phoenix</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-										<tr>
-											<td>Project X</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Sharon Lessman</td>
-										</tr>
-										<tr>
-											<td>Project Romeo</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Christina Mason</td>
-										</tr>
-										<tr>
-											<td>Project Wombat</td>
-											<td class="d-none d-xl-table-cell">01/01/2021</td>
-											<td class="d-none d-xl-table-cell">31/06/2021</td>
-											<td><span class="badge bg-warning">In progress</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						
-					</div>
-
-				</div>
-			</main>
-
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a>								&copy;
-							</p>
-						</div>
-						<div class="col-6 text-end">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
-	</div>
-
-	<script src="js/app.js"></script>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
-			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
-			gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
-			gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
-			// Line chart
-			new Chart(document.getElementById("chartjs-dashboard-line"), {
-				type: "line",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "Sales ($)",
-						fill: true,
-						backgroundColor: gradient,
-						borderColor: window.theme.primary,
-						data: [
-							2115,
-							1562,
-							1584,
-							1892,
-							1587,
-							1923,
-							2566,
-							2448,
-							2805,
-							3438,
-							2917,
-							3327
-						]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					tooltips: {
-						intersect: false
-					},
-					hover: {
-						intersect: true
-					},
-					plugins: {
-						filler: {
-							propagate: false
-						}
-					},
-					scales: {
-						xAxes: [{
-							reverse: true,
-							gridLines: {
-								color: "rgba(0,0,0,0.0)"
-							}
-						}],
-						yAxes: [{
-							ticks: {
-								stepSize: 1000
-							},
-							display: true,
-							borderDash: [3, 3],
-							gridLines: {
-								color: "rgba(0,0,0,0.0)"
-							}
-						}]
-					}
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Pie chart
-			new Chart(document.getElementById("chartjs-dashboard-pie"), {
-				type: "pie",
-				data: {
-					labels: ["Chrome", "Firefox", "IE"],
-					datasets: [{
-						data: [4306, 3801, 1689],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.warning,
-							window.theme.danger
-						],
-						borderWidth: 5
-					}]
-				},
-				options: {
-					responsive: !window.MSInputMethodContext,
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					cutoutPercentage: 75
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Bar chart
-			new Chart(document.getElementById("chartjs-dashboard-bar"), {
-				type: "bar",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "This year",
-						backgroundColor: window.theme.primary,
-						borderColor: window.theme.primary,
-						hoverBackgroundColor: window.theme.primary,
-						hoverBorderColor: window.theme.primary,
-						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					scales: {
-						yAxes: [{
-							gridLines: {
-								display: false
-							},
-							stacked: false,
-							ticks: {
-								stepSize: 20
-							}
-						}],
-						xAxes: [{
-							stacked: false,
-							gridLines: {
-								color: "transparent"
-							}
-						}]
-					}
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var markers = [{
-					coords: [31.230391, 121.473701],
-					name: "Shanghai"
-				},
-				{
-					coords: [28.704060, 77.102493],
-					name: "Delhi"
-				},
-				{
-					coords: [6.524379, 3.379206],
-					name: "Lagos"
-				},
-				{
-					coords: [35.689487, 139.691711],
-					name: "Tokyo"
-				},
-				{
-					coords: [23.129110, 113.264381],
-					name: "Guangzhou"
-				},
-				{
-					coords: [40.7127837, -74.0059413],
-					name: "New York"
-				},
-				{
-					coords: [34.052235, -118.243683],
-					name: "Los Angeles"
-				},
-				{
-					coords: [41.878113, -87.629799],
-					name: "Chicago"
-				},
-				{
-					coords: [51.507351, -0.127758],
-					name: "London"
-				},
-				{
-					coords: [40.416775, -3.703790],
-					name: "Madrid "
-				}
-			];
-			var map = new jsVectorMap({
-				map: "world",
-				selector: "#world_map",
-				zoomButtons: true,
-				markers: markers,
-				markerStyle: {
-					initial: {
-						r: 9,
-						strokeWidth: 7,
-						stokeOpacity: .4,
-						fill: window.theme.primary
-					},
-					hover: {
-						fill: window.theme.primary,
-						stroke: window.theme.primary
-					}
-				},
-				zoomOnScroll: false
-			});
-			window.addEventListener("resize", () => {
-				map.updateSize();
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
-			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-			document.getElementById("datetimepicker-dashboard").flatpickr({
-				inline: true,
-				prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-				nextArrow: "<span title=\"Next month\">&raquo;</span>",
-				defaultDate: defaultDate
-			});
-		});
-	</script>
-
-</body>
-
-</html>
+@endsection
