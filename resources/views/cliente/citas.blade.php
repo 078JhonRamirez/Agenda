@@ -152,8 +152,6 @@
         ================================================== -->
         @extends('layouts.layout')
         @section('citas')
-            
-      
         <div class="s-content">
 
             <header class="listing-header">

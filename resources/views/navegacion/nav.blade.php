@@ -1,12 +1,12 @@
-<div id="preloader">
+{{-- <div id="preloader">
     <div id="loader" class="dots-fade">
         <div></div>
         <div></div>
         <div></div>
     </div>
-</div>
+</div> --}}
 
-<topdiv id="" class="s-wrap site-wrapper">
+<div id="" class="s-wrap site-wrapper">
 
     <!-- site header
     ================================================== -->
@@ -26,30 +26,30 @@
 <nav class="header__nav-wrap">
 
     <ul class="header__nav">
-        <li class="current"><a href="index.html" title="">Home</a></li>
+        <li class="current"><a href="{{ route('inicio') }}">Inicio</a></li>
         <li class="has-children">
-            <a href="#0" title="">citas</a>
-            <ul class="sub-menu">
+            <a href="{{ route('citas') }}">citas</a>
+            {{-- <ul class="sub-menu">
             <li><a href="category.html">Lifestyle</a></li>
             <li><a href="category.html">Health</a></li>
             <li><a href="category.html">Family</a></li>
             <li><a href="category.html">Management</a></li>
             <li><a href="category.html">Travel</a></li>
             <li><a href="category.html">Work</a></li>
-            </ul>
+            </ul> --}}
         </li>
-        <li class="has-children">
-            <a href="#0" title="">Blog Posts</a>
+        {{-- <li class="has-children"> --}}
+            {{-- <a href="#0" title="">Blog Posts</a>
             <ul class="sub-menu">
             <li><a href="single-video.html">Video Post</a></li>
             <li><a href="single-audio.html">Audio Post</a></li>
             <li><a href="single-gallery.html">Gallery Post</a></li>
             <li><a href="single-standard.html">Standard Post</a></li>
-            </ul>
-        </li>
-        <li><a href="styles.html" title="">Styles</a></li>
-        <li><a href="page-about.html" title="">About</a></li>
-        <li><a href="page-contact.html" title="">Contact</a></li>
+            </ul> --}}
+        {{-- </li> --}}
+        <li><a href="styles.html" title="">Perfil</a></li>
+        <li><a href="{{ route('sobremi') }}" title="">Sobre Mí</a></li>
+        <li><a href="{{ route('contacto') }}" title="">Contacto</a></li>
     </ul> <!-- end header__nav -->
 
     <ul class="header__social">

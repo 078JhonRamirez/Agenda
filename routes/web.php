@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/', function () {
-    return view('category');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::view('/', 'index' )->name('inicio');
+
+Route::view('/citas', 'citas' )->name('citas');
+
+Route::view('/contacto', 'contacto' )->name('contacto');
+
+Route::view('/sobremi', 'sobremi' )->name('sobremi');
+
+
+
+
+
+// Route::get('/citas')->name('citas');
